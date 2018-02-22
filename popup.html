@@ -11,7 +11,9 @@
                     }
 
                     window.addEventListener("message", function(event) {
+
                         alert(JSON.stringify(event.data));
+
                         const origin = "null" !== event.origin ? event.origin : "*";
                         event.source.postMessage({done:1}, origin);
                     });

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="connect.js"></script>
+        <script>
+            (function() {
+
+                window.addEventListener("load", function() {
+
+                    LedgerConnect._send({key:"value"}, function(result) {
+                        alert(JSON.stringify(result));
+                    });
+                });
+            })();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
+
