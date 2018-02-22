@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            (function() {
+
+                window.addEventListener("load", function(){
+                    //...
+                    if (window.opener) {
+                        window.opener.postMessage("handshake", "*");
+                    }
+
+                    window.addEventListener("message", function(event) {
+                        alert(JSON.stringify(event.data));
+                        const origin = "null" !== event.origin ? event.origin : "*";
+                        event.source.postMessage({done:1}, origin);
+                    });
+                });
+            })();
+        </script>
+    </head>
+    <body>
+Popup
+    </body>
+</html>
